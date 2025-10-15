@@ -1,0 +1,83 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: #eaf6ea;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 1rem;
+  background: #a8d5ba;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 2rem auto;
+  max-width: 400px;
+}
+
+.cell {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border: 2px solid #9ccc65;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+}
+
+.cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cell.marked::after {
+  content: "✅";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(0, 128, 0, 0.7);
+  color: white;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #43a047;
+}
+
+#winner-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-size: 1.2rem;
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
